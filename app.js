@@ -46,7 +46,11 @@ app.configure( 'development', function (){
 //-----------------------------------------------------------------------------------------------
 app.get('/', routes.index);
 
-
+app.get('/document.pdf', function(req, res, next){
+  var file = 'document.pdf'
+    , path = __dirname + '/' + file;
+  res.download(path);
+});
 
 //-----------------------------------------------------------------------------------------------
 //Web Service
